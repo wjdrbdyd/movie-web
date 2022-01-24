@@ -11,4 +11,4 @@
 ### 1. ajax로 api 호출 후 영화 리스트 페이지 
 ### 2. Route를 이용한 detail페이지 동적 이동
 
-####  current none style
+####  css clone

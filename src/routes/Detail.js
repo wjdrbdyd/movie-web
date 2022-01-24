@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import styles from "./Detail.module.css";
 const Detail = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
@@ -15,14 +15,17 @@ const Detail = () => {
   useEffect(() => {
     getMovie();
   }, []);
-  console.log(movie);
   return (
-    <div>
+    <div className={styles.container}>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
         <div>
-          <img src={movie.medium_cover_image} alt={movie.title} />
+          <img
+            className={styles.img__center}
+            src={movie.medium_cover_image}
+            alt={movie.title}
+          />
           <h1>{movie.title} </h1>
           <p>
             <span>평점: {movie.rating} </span>
@@ -30,10 +33,10 @@ const Detail = () => {
           </p>
           <p>
             {movie.year}{" "}
-            {movie.genres && movie.genres.map((g) => <span>{g} </span>)}
+            {movie.genres && movie.genres.map((g) => <span key={g}>{g} </span>)}
             {`🤍${movie.like_count}`}
           </p>
-          <p>{movie.description_intro}</p>
+          <p className={styles.ta__l}>{movie.description_intro}</p>
         </div>
       )}
     </div>

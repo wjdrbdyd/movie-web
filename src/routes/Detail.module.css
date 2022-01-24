@@ -1,0 +1,13 @@
+.container {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ta__l {
+  text-align: left;
+}
